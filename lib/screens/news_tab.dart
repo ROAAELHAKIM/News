@@ -49,7 +49,7 @@ class _NewsTabState extends State<NewsTab> {
               }
               return Expanded(
                 child: ListView.builder(itemBuilder: (context, index) {
-                 return Text(articlesList[index].title??"   ");
+                 return Text(articlesList[index].title??"    ");
                 },
                 itemCount: articlesList.length,
                 ),
