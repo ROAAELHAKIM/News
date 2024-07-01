@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
+import '../models/Categorie_model.dart';
 import '../shared/network/remote/api_manager.dart';
 import 'news_tab.dart';
 class DataTab extends StatelessWidget {
-  String CategoryId;
-   DataTab({required this.CategoryId,super.key});
+
+  CategorieModel category;
+   DataTab({required this.category,super.key});
 
   @override
   Widget build(BuildContext context) {
 
     return FutureBuilder(
-      future: ApiManager.getSources(CategoryId),
+      future: ApiManager.getSources(category.id),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(child: CircularProgressIndicator());

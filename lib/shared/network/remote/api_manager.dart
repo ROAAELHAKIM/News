@@ -8,10 +8,10 @@ import '../../../models/NewsResponse.dart';
 
 class ApiManager{
 //https://newsapi.org/v2/top-headlines/sources?apiKey=0d541a2cadd9461a82e205676d309c6a
- static Future<SourceResponse> getSources(String category)async{
+ static Future<SourceResponse> getSources(String categoryid)async{
   Uri url=Uri.https(
       "newsapi.org","/v2/top-headlines/sources",{
-   "apiKey":"0d541a2cadd9461a82e205676d309c6a","category":category
+   "apiKey":"0d541a2cadd9461a82e205676d309c6a","category":categoryid
   });
  http.Response respons =await http.get(url);
  Map<String,dynamic> json=jsonDecode(respons.body);
